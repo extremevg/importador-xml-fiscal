@@ -7,7 +7,8 @@ Projeto em Node.js para leitura, processamento e extração de dados principais 
 - Leitura de arquivos XML em lote
 - Conversão de XML para objeto JavaScript
 - Extração de campos principais da nota fiscal
-- Geração de arquivos JSON com os dados processados
+- Geração de arquivos JSON individuais
+- Geração de arquivo CSV consolidado com resumo dos XMLs processados
 
 ## Tecnologias utilizadas
 - Node.js
@@ -16,8 +17,8 @@ Projeto em Node.js para leitura, processamento e extração de dados principais 
 
 ## Estrutura do projeto
 - `data/`: arquivos XML de entrada
-- `output/`: arquivos JSON gerados
-- `src/services/`: regras de leitura, parsing e saída
+- `output/`: arquivos JSON e CSV gerados
+- `src/services/`: leitura, parsing, exportação de JSON e CSV
 - `src/utils/`: utilitários auxiliares
 
 ## Como executar

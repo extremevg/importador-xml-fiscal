@@ -1,0 +1,2 @@
+arquivo;dataProcessamento;numeroNota;dataEmissao;emitente;cnpjEmitente;destinatario;cnpjDestinatario;valorNota
+"exemplo.xml";"2026-03-17T18:15:02.084Z";"12345";"2026-03-17T10:00:00-03:00";"Empresa Exemplo LTDA";"12345678000199";"Cliente Teste";"99887766000155";"1500.00"
