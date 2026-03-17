@@ -9,6 +9,7 @@
   "author": "Victor Gabriel Fabri",
   "license": "ISC",
   "dependencies": {
+    "sqlite3": "^6.0.1",
     "xml2js": "^0.6.2"
   }
 }

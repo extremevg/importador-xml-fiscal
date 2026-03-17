@@ -4,6 +4,7 @@ const { listarArquivosXml, lerArquivo } = require('./src/services/fileService')
 const { converterXmlParaObjeto, extrairResumo } = require('./src/services/xmlService')
 const { salvarJson } = require('./src/services/outputService')
 const { gerarCsv, salvarCsv } = require('./src/services/csvService')
+const { criarTabela, inserirNotaFiscal, listarNotasFiscais } = require('./src/database/notaFiscalRepository')
 const logger = require('./src/utils/logger')
 
 const PASTA_XML = path.join(__dirname, 'data')
@@ -12,6 +13,9 @@ const PASTA_SAIDA = path.join(__dirname, 'output')
 async function executar() {
   try {
     logger.info('Iniciando processamento dos arquivos XML...')
+
+    await criarTabela()
+    logger.info('Tabela do banco verificada/criada com sucesso.')
 
     const arquivosXml = listarArquivosXml(PASTA_XML)
 
@@ -35,12 +39,19 @@ async function executar() {
 
       const caminhoSaidaJson = salvarJson(PASTA_SAIDA, nomeArquivo, resumo)
       logger.info(`JSON gerado com sucesso: ${caminhoSaidaJson}`)
+
+      const idInserido = await inserirNotaFiscal(resumo)
+      logger.info(`Registro salvo no banco com sucesso. ID: ${idInserido}`)
     }
 
     const conteudoCsv = gerarCsv(resumos)
     const caminhoCsv = salvarCsv(PASTA_SAIDA, 'resumo.csv', conteudoCsv)
 
     logger.info(`CSV gerado com sucesso: ${caminhoCsv}`)
+
+    const registros = await listarNotasFiscais()
+    logger.info(`Total de registros no banco: ${registros.length}`)
+
     logger.info('Processamento finalizado com sucesso.')
   } catch (err) {
     logger.error(`Falha ao processar XML: ${err.message}`)
