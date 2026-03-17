@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc>
+  <NFe>
+    <infNFe>
+      <ide>
+        <nNF>12345</nNF>
+        <dhEmi>2026-03-17T10:00:00-03:00</dhEmi>
+      </ide>
+      <emit>
+        <xNome>Empresa Exemplo LTDA</xNome>
+        <CNPJ>12345678000199</CNPJ>
+      </emit>
+      <dest>
+        <xNome>Cliente Teste</xNome>
+        <CNPJ>99887766000155</CNPJ>
+      </dest>
+      <total>
+        <ICMSTot>
+          <vNF>1500.00</vNF>
+        </ICMSTot>
+      </total>
+    </infNFe>
+  </NFe>
+</nfeProc>

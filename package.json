@@ -1,0 +1,14 @@
+{
+  "name": "importador-xml-fiscal",
+  "version": "1.0.0",
+  "description": "Importador de XML fiscal em Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Victor Gabriel Fabri",
+  "license": "ISC",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}
